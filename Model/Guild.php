@@ -15,12 +15,12 @@ class Guild  {
      */
     public $pics;
 
-    public $content = [];
+    public $content;
 
     /**
      * Default constructor
      */
-    public function __construct(string $name, string $pics="", $content) {
+    public function __construct(string $name, string $pics="", $content = array()) {
         $this->name = $name;
         $this->pics = $pics;
         $this->content = $content;

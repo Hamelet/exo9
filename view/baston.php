@@ -6,23 +6,24 @@ require_once "../controler/Dwarf.php";
 require_once "../controler/Mage.php";
 require_once "../Model/Guild.php";
 
-$Proud_axe = new Guild("Proud_axe ");
+$Proud_axe = new Guild("Proud_axe");
 $steel_Gauntlet = new Guild("steel_gauntlet");
 
 // chaques guild est un tableau
-$Proud_axe->content.array_push([
+$Proud_axe->content=array_push(
                                 $Bolg = new Brut("Bolg"),
                                 $Kili = new Dwarf("Kili"),
                                 $Ragadast = new Mage("Ragadast"),
-                                $Azog = new Brut("Azog"),
-]);
+                                $Azog = new Brut("Azog")
+);
 
-$steel_Gauntlet->content.array_push([
+$steel_Gauntlet->content=array_push(
                                     $Fili = new Dwarf("Fili"),
                                     $Gandalf = new Mage("Gandalf"),
                                     $Aragorn = new Brut("Aragorn"),
-                                    $Balin = new Dwarf("Balin"),
-]); 
+                                    $Balin = new Dwarf("Balin")
+); 
+var_dump($Proud_axe->content);
 
 
 function fight($pCharac1, $pCharac2)
@@ -44,9 +45,9 @@ function fight($pCharac1, $pCharac2)
 
 function pick($pGuild1, $pGuild2)
 {
-    for ($i=0; $i < sizeof($pGuild1) ; $i++) { 
-        for ($j=0; $j < sizeof($pGuild2) ; $j++) { 
-            return fight($pGuild1[rand($i)], $pGuild2[rand($j)]);
+    for ($i=0; $i < sizeof($pGuild1->content) ; $i++) { 
+        for ($j=0; $j < sizeof($pGuild2->content) ; $j++) { 
+            return fight($pGuild1->content[rand($i)], $pGuild2->content[rand($j)]);
         }
     }
 }
