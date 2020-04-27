@@ -52,7 +52,11 @@ class Mage extends Character {
      * 
      */
     public function hit($pCharac) {
-        $touch= rand(1, 3) ;        
+        $touch= rand(1, 3) ; 
+        if ($pCharac->touched) 
+        {
+        $this->regain($pCharac);
+        }        
         if ($touch%2 != 0) 
         {   
             $this->touched = true;               
@@ -61,12 +65,7 @@ class Mage extends Character {
         {
             $this->touched = false;
             echo $this->name . "à raté son coup ! <br>";
-        }   
-        if ($pCharac->touched) 
-        {
-            $this->regain($pCharac);
-        }  
-          
+        }             
         $this->touched = false;
     }
 

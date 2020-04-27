@@ -37,8 +37,8 @@ function fight($pCharac1, $pCharac2)
             } else if($pCharac1->getLife() <= 0)
             {
                 echo $pCharac2->name . " a gagné <br>";
-            }
-                echo "round suivant <br>";            
+            }else{echo "round suivant <br>";}
+                            
     } return;
         
 }
