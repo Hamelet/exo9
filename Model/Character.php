@@ -5,7 +5,7 @@
  */
 abstract class Character {
 
-    protected $id = 0;
+    protected $id;
 
     /**
      * 
@@ -33,11 +33,12 @@ abstract class Character {
     /**
      * Default constructor
      */
-    protected function __construct(string $name, int $dmg, int $life=100, string $pics='') {
+    protected function __construct(string $name, int $dmg, int $life=100, string $pics='', int $id = 0) {
         $this->name = $name;
         $this->dmg = $dmg;
         $this->pics = $pics;
         $this->life = $life;
+        $this->id = $id++;
 
     }
 
